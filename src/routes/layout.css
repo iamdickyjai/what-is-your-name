@@ -1,0 +1,25 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/forms';
+
+@theme {
+	--spacing-search-bar: 6rem;
+
+	--color-canvas: var(--color-stone-50);
+	--color-panel: var(--color-white);
+	--color-ink: var(--color-stone-900);
+	--color-muted: var(--color-stone-500);
+	--color-line: var(--color-stone-200);
+}
+
+.dark {
+	color-scheme: dark;
+	--color-canvas: var(--color-stone-950);
+	--color-panel: var(--color-stone-900);
+	--color-ink: var(--color-stone-100);
+	--color-muted: var(--color-stone-400);
+	--color-line: var(--color-stone-800);
+}
+
+@utility surface {
+	@apply rounded-xl border border-line bg-panel shadow-sm;
+}

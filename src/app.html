@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="text-scale" content="scale" />
+		<script>
+			// Runs before first paint so the page never flashes the wrong theme
+			{
+				const savedTheme = localStorage.getItem('theme');
+				const isDark = savedTheme
+					? savedTheme === 'dark'
+					: matchMedia('(prefers-color-scheme: dark)').matches;
+				document.documentElement.classList.toggle('dark', isDark);
+			}
+		</script>
+		%sveltekit.head%
+	</head>
+	<body class="bg-canvas text-ink antialiased">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>
